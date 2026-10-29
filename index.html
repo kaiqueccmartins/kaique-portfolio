@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio profissional de Kaique, com experiência em suporte técnico, plataformas SaaS, APIs, atendimento ao cliente e projetos de dados.">
+  <title>Kaique | Portfólio profissional</title>
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111a2e;
+      --text: #f4f7fb;
+      --muted: #a8b4c8;
+      --line: rgba(255,255,255,.12);
+      --accent: #7ce3c3;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(11,16,32,.9);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 850;
+      letter-spacing: -.05em;
+      font-size: 1.15rem;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 104px 0 82px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 18px 0;
+      font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+      line-height: 1.04;
+      letter-spacing: -.065em;
+    }
+
+    h1 em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .lead {
+      max-width: 740px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 700;
+      font-size: .93rem;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .btn.primary {
+      color: #07131a;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .quickfacts {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 999px;
+      padding: 6px 11px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    section {
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 740px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -.045em;
+      line-height: 1.13;
+      margin: 8px 0 14px;
+    }
+
+    .section-head p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(
+        145deg,
+        rgba(22,33,58,.96),
+        rgba(17,26,46,.96)
+      );
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(124,227,195,.4);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      margin: 8px 0;
+      font-size: 1.15rem;
+      letter-spacing: -.02em;
+      line-height: 1.35;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 17px;
+    }
+
+    .tags span {
+      font-size: .77rem;
+      color: #d8e2f4;
+      background: rgba(255,255,255,.06);
+      border-radius: 7px;
+      padding: 4px 8px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .role {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 24px;
+    }
+
+    .role-date {
+      color: var(--accent);
+      font-size: .9rem;
+      font-weight: 700;
+      padding-top: 4px;
+    }
+
+    .role-body {
+      padding: 0 0 28px 24px;
+      border-left: 1px solid var(--line);
+      position: relative;
+    }
+
+    .role-body::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      position: absolute;
+      left: -5px;
+      top: 10px;
+    }
+
+    .role-body h3 {
+      margin: 0 0 4px;
+    }
+
+    .company {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .role-body p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .skill {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.02);
+    }
+
+    .skill h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: .92rem;
+      margin: 0;
+    }
+
+    .education {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .small-note {
+      font-size: .84rem;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 0;
+        gap: 10px;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      .hero {
+        padding: 72px 0 60px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .grid,
+      .education,
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .role {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .role-date {
+        padding-left: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn,
+      .card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio">KAIQUE<span>.</span></a>
+
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#competencias">Competências</a>
+        <a href="#formacao">Formação</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- APRESENTAÇÃO -->
+    <section class="hero" id="inicio" style="border-top: 0">
+      <div class="wrap">
+        <div class="eyebrow">Tecnologia e experiência do cliente</div>
+
+        <h1>
+          Gosto de entender o problema e encontrar
+          <em>uma solução que funcione.</em>
+        </h1>
+
+        <p class="lead">
+          Sou Kaique, profissional de tecnologia com experiência em suporte
+          técnico N1/N2 em plataformas SaaS. No dia a dia, investigo falhas,
+          testo integrações, documento evidências e acompanho demandas junto
+          às áreas de Produto e Engenharia. Também venho aprofundando meus
+          conhecimentos em SQL e análise de dados.
+        </p>
+
+        <div class="actions">
+          <!-- Substitua os links pelos seus endereços reais -->
+          <a
+            class="btn primary"
+            href="https://www.linkedin.com/in/kaiqueccmartins/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ver LinkedIn ↗
+          </a>
+
+          <a class="btn" href="#projetos">
+            Conhecer meus projetos
+          </a>
+
+          <a class="btn" href="mailto:kaiqueccmartins@gmail.com">
+            Falar comigo
+          </a>
+        </div>
+
+        <div class="quickfacts">
+          <span class="chip">Atendimento B2B</span>
+          <span class="chip">Investigação de incidentes</span>
+          <span class="chip">APIs e webhooks</span>
+          <span class="chip">SQL e PostgreSQL</span>
+          <span class="chip">Testes funcionais</span>
+          <span class="chip">Ciência de Dados na UFPE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Um pouco sobre mim</div>
+
+          <h2>
+            Entender o contexto é tão importante quanto resolver o erro.
+          </h2>
+
+          <p>
+            Minha trajetória começou na área comercial, onde aprendi a ouvir
+            clientes, entender suas necessidades e lidar com diferentes cenários.
+            Hoje, levo essa experiência para o suporte técnico, buscando
+            compreender o que aconteceu, reunir informações úteis e explicar
+            os próximos passos de forma clara.
+          </p>
+
+          <p>
+            Na Toolzz, trabalho com situações que exigem investigação, desde
+            dúvidas sobre regras de negócio até falhas que precisam ser
+            reproduzidas e encaminhadas para análise técnica. Também valido
+            melhorias e correções, observando se o resultado faz sentido para
+            quem utiliza a plataforma.
+          </p>
+
+          <p>
+            Em paralelo, estudo SQL e PostgreSQL e comecei uma pós-graduação
+            em Ciência de Dados na UFPE. Quero continuar ampliando minha
+            capacidade de analisar problemas, trabalhar com informações e
+            contribuir para produtos melhores.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Experiência</div>
+
+          <h2>Da necessidade do cliente à investigação do problema.</h2>
+
+        </div>
+
+        <div class="timeline">
+          <article class="role">
+            <div class="role-date">Nov/2025 – atual</div>
+
+            <div class="role-body">
+              <h3>Analista de Suporte Jr.</h3>
+
+              <div class="company">
+                Toolzz · Plataforma de tecnologia SaaS
+              </div>
+
+              <p>
+                Atendo clientes B2B em demandas técnicas de primeiro e segundo
+                nível, investigo incidentes e analiso comportamentos de APIs
+                e integrações. Organizo evidências para os encaminhamentos a
+                Produto e Engenharia, acompanho chamados e atualizo
+                documentações de apoio. Desde 2026, também realizo validações
+                de melhorias e correções, conferindo se o comportamento final
+                corresponde ao esperado.
+              </p>
+
+              <div class="tags">
+                <span>Suporte N1/N2</span>
+                <span>APIs REST</span>
+                <span>Webhooks</span>
+                <span>Documentação técnica</span>
+		<span> QA funcional</span>
+                <span>Validação funcional</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-date">Experiências anteriores</div>
+
+            <div class="role-body">
+              <h3>Experiência comercial e atendimento B2B</h3>
+
+              <div class="company">Vendas e pré-vendas B2B</div>
+
+              <p>
+                Trabalhei com prospecção, qualificação de oportunidades e
+                acompanhamento comercial por canais digitais e telefone.
+                Essa vivência fortaleceu minha comunicação, organização de
+                rotinas, gestão de expectativas e capacidade de compreender
+                o que o cliente realmente precisa.
+              </p>
+
+              <div class="tags">
+                <span>Atendimento consultivo</span>
+                <span>CRM</span>
+                <span>Prospecção</span>
+                <span>Follow-up</span>
+		<span>Processos comerciais</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Projetos em destaque</div>
+
+          <h2>Aprendizado aplicado a problemas reais.</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="kicker">SQL · PostgreSQL</div>
+
+            <h3>Análise de chamados de suporte</h3>
+
+            <p>
+              Projeto com uma base de chamados para explorar volume de
+              atendimentos, tempo de resolução, categorias e satisfação.
+              A proposta é transformar os registros em indicadores que ajudem
+              a entender a operação e identificar oportunidades de melhoria.
+            </p>
+
+            <div class="tags">
+              <span>PostgreSQL</span>
+              <span>Consultas SQL</span>
+              <span>Indicadores</span>
+              <span>Análise exploratória</span>
+            </div>
+
+         </article>
+
+          <article class="card">
+            <div class="kicker">SQL · Modelagem</div>
+
+            <h3>Banco de dados de biblioteca universitária</h3>
+
+            <p>
+              Exercício de modelagem relacional e consultas para organizar
+              informações sobre livros, usuários e empréstimos. O projeto
+              serve para praticar relacionamentos entre tabelas e responder
+              perguntas usando SQL.
+            </p>
+
+            <div class="tags">
+              <span>Modelagem relacional</span>
+              <span>PostgreSQL</span>
+              <span>JOIN</span>
+              <span>Agregações</span>
+            </div>
+	  </article>
+
+          <article class="card">
+            <div class="kicker">APIs · Suporte técnico</div>
+
+            <h3>Testes e investigação de APIs</h3>
+
+            <p>
+              Organização de requisições para reproduzir cenários, verificar
+              respostas HTTP e registrar evidências técnicas. O objetivo é
+              tornar a investigação mais consistente e facilitar a comunicação
+              com quem vai analisar o problema.
+            </p>
+
+            <div class="tags">
+              <span>Insomnia</span>
+              <span>APIs REST</span>
+              <span>HTTP</span>
+              <span>Reprodução de erros</span>
+            </div>
+           </article>
+
+          <article class="card">
+            <div class="kicker">QA · Produto</div>
+
+            <h3>Validação de melhorias e correções</h3>
+
+            <p>
+              Testes funcionais de tarefas relacionadas ao suporte, comparando
+              o resultado com o comportamento esperado e observando possíveis
+              impactos para quem usa a plataforma. Quando algo não corresponde
+              ao esperado, o cenário precisa ficar claro para que possa ser
+              corrigido.
+            </p>
+
+            <div class="tags">
+              <span>Testes funcionais</span>
+              <span>Critérios de aceite</span>
+              <span>Experiência de uso</span>
+              <span>Registro de bugs</span>
+            </div>
+          </article>
+        </section>
+
+    <!-- COMPETÊNCIAS -->
+    <section id="competencias">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Competências</div>
+
+          <h2>
+            O que levo para o trabalho.
+          </h2>
+        </div>
+
+        <div class="skills">
+          <div class="skill">
+            <h3>Suporte e atendimento</h3>
+            <p>
+              Atendimento técnico N1/N2, gestão de chamados, investigação
+              de incidentes, documentação, escalonamento e comunicação com clientes.
+            </p>
+          </div>
+
+          <div class="skill">
+            <h3>Integrações</h3>
+            <p>
+              APIs REST, webhooks, análise de respostas HTTP, testes com
+              Insomnia e leitura de documentação técnica.
+            </p>
+          </div>
+
+          <div class="skill">
+            <h3>Dados</h3>
+            <p>
+              SQL, PostgreSQL, consultas relacionais, organização de
+              informações e construção de indicadores.
+            </p>
+          </div>
+
+          <div class="skill">
+            <h3>Qualidade de produto</h3>
+            <p>
+              Validação funcional, reprodução de cenários, conferência do
+              comportamento esperado e atenção à experiência de uso.
+            </p>
+          </div>
+
+          <div class="skill">
+            <h3>Relacionamento B2B</h3>
+            <p>
+              Comunicação consultiva, entendimento das necessidades do
+              cliente, gestão de expectativas e acompanhamento de demandas.
+            </p>
+          </div>
+
+          <div class="skill">
+            <h3>Desenvolvimento</h3>
+            <p>
+              Fundamentos de HTML, CSS e JavaScript, uso do GitHub e Insomnia e
+              conhecimentos desenvolvidos durante a formação Full Stack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMAÇÃO -->
+    <section id="formacao">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Formação</div>
+
+          <h2>Comunicação, tecnologia e dados.</h2>
+        </div>
+
+        <div class="education">
+          <article class="card">
+            <div class="kicker">Em andamento · 2028</div>
+
+            <h3>Pós-graduação em Ciência de Dados</h3>
+
+            <p>
+              Centro de Informática da Universidade Federal de Pernambuco
+              (UFPE).
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Concluído · 2025</div>
+
+            <h3>Formação Full Stack Developer</h3>
+
+            <p>
+              Rocketseat · Curso de extensão (181h) concluído em agosto de 2025.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Concluído · 2024</div>
+
+            <h3>Publicidade e Propaganda</h3>
+
+            <p>
+              Graduação concluída em 2024.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Estudos práticos</div>
+
+            <h3>SQL e PostgreSQL</h3>
+
+            <p>
+              Projetos de consultas, modelagem relacional e análise de
+              dados aplicados a situações de estudo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="wrap contact">
+        <div>
+          <div class="eyebrow">Contato</div>
+
+          <h2>Vamos conversar?</h2>
+
+          <p class="muted">
+            Se quiser trocar uma ideia sobre tecnologia, suporte ao cliente
+            ou oportunidades profissionais, pode entrar em contato.
+          </p>
+        </div>
+
+        <div class="actions">
+          <a
+            class="btn primary"
+            href="https://www.linkedin.com/in/kaiqueccmartins/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a class="btn" href="mailto:kaiqueccmartins@gmail.com">
+            kaiqueccmartins@gmail.com
+          </a>
+
+          <a
+            class="btn"
+            href="https://github.com/kaiqueccmartins/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year">2026</span> Kaique · Portfólio profissional
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
